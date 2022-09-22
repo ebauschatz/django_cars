@@ -20,7 +20,7 @@ def cars_list(request):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-@api_view(['GET', 'PUT', 'DELETE'])
+@api_view(['GET', 'PUT', 'DELETE', 'PATCH'])
 def car_detail(request, pk):
     car = get_object_or_404(Car, pk = pk)
     if request.method == 'GET':
@@ -31,6 +31,17 @@ def car_detail(request, pk):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+    elif request.method == 'PATCH':
+        serializer = CarSerializer(car, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
     elif request.method == 'DELETE':
         car.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET'])
+def car_detail_by_make(request, make):
+    cars = Car.objects.filter(make = make)
+    serializer = CarSerializer(cars, many=True)
+    return Response(serializer.data)
