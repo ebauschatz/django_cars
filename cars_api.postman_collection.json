@@ -37,7 +37,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"make\": \"Honda\",\r\n    \"model\": \"Civic\",\r\n    \"year\": 2001,\r\n    \"price\": 13000.0\r\n}",
+					"raw": "{\r\n    \"make\": \"Honda\",\r\n    \"model\": \"Accord\",\r\n    \"year\": 2010,\r\n    \"price\": 24000.0\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -142,6 +142,258 @@
 						"cars",
 						"3",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Cars_By_Make",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cars/make/ford/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cars",
+						"make",
+						"ford",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Car_Price",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 180000.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cars/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cars",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Cars_By_Color",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/cars/color/green/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cars",
+						"color",
+						"green",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_All_Dealerships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dealerships/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dealerships",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Dealership",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Fun Dealership\",\r\n    \"street_address\": \"456 Main St\",\r\n    \"city\": \"Elsewhere\",\r\n    \"state\": \"NY\",\r\n    \"zip\": \"54321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dealerships/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dealerships",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Dealership_By_Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dealerships/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dealerships",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_Dealership",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Fun Dealership LLC\",\r\n    \"street_address\": \"456 Main St\",\r\n    \"city\": \"Elsewhere\",\r\n    \"state\": \"NY\",\r\n    \"zip\": \"54321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dealerships/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dealerships",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete_Dealership",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dealerships/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dealerships",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_Dealership_Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/dealerships/1/cars",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"dealerships",
+						"1",
+						"cars"
 					]
 				}
 			},
