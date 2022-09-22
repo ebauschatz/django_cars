@@ -5,7 +5,6 @@ from .serializers import CarSerializer
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 
-from cars import serializers
 
 @api_view(['GET', 'POST'])
 def cars_list(request):
@@ -43,5 +42,11 @@ def car_detail(request, pk):
 @api_view(['GET'])
 def car_detail_by_make(request, make):
     cars = Car.objects.filter(make = make)
+    serializer = CarSerializer(cars, many=True)
+    return Response(serializer.data)
+    
+@api_view(['GET'])
+def car_detail_by_color(request, color):
+    cars = Car.objects.filter(color = color)
     serializer = CarSerializer(cars, many=True)
     return Response(serializer.data)
